@@ -1,0 +1,70 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31815.197
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{7DEA85E7-1A8C-4CD8-851C-93DA06876478}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rinsen.IdentityProvider", "src\Rinsen.IdentityProvider\Rinsen.IdentityProvider.csproj", "{3BBBB25B-D0E5-4CC5-883C-7449CE10CFC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{2A179564-1E28-4918-BE16-494C31BFD9F2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A713210A-0889-49CE-93B0-A6A825958DD4}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C88C482B-DE59-4166-A365-84DDCF3A6177}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\codeql-analysis.yml = .github\workflows\codeql-analysis.yml
+		.github\workflows\docker-publish.yml = .github\workflows\docker-publish.yml
+		.github\workflows\ng-docker-publish.yml = .github\workflows\ng-docker-publish.yml
+		.github\workflows\node.js.yml = .github\workflows\node.js.yml
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rinsen.Outback.Gui", "src\Rinsen.Outback.Gui\Rinsen.Outback.Gui.csproj", "{5045A937-CD79-4871-B4A9-DBBE12FB1B8E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rinsen.Outback.Gui.Installation", "src\Rinsen.Outback.Gui.Installation\Rinsen.Outback.Gui.Installation.csproj", "{BBB9C4C9-ABBA-4B89-9F7B-EE2BB241C67B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rinsen.IdentityProvider.Tests", "tests\Rinsen.IdentityProvider.Tests\Rinsen.IdentityProvider.Tests.csproj", "{66066538-F566-4EA7-9233-A2342D6DFC7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BBBB25B-D0E5-4CC5-883C-7449CE10CFC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BBBB25B-D0E5-4CC5-883C-7449CE10CFC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BBBB25B-D0E5-4CC5-883C-7449CE10CFC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BBBB25B-D0E5-4CC5-883C-7449CE10CFC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5045A937-CD79-4871-B4A9-DBBE12FB1B8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5045A937-CD79-4871-B4A9-DBBE12FB1B8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5045A937-CD79-4871-B4A9-DBBE12FB1B8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5045A937-CD79-4871-B4A9-DBBE12FB1B8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBB9C4C9-ABBA-4B89-9F7B-EE2BB241C67B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBB9C4C9-ABBA-4B89-9F7B-EE2BB241C67B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBB9C4C9-ABBA-4B89-9F7B-EE2BB241C67B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBB9C4C9-ABBA-4B89-9F7B-EE2BB241C67B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66066538-F566-4EA7-9233-A2342D6DFC7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66066538-F566-4EA7-9233-A2342D6DFC7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66066538-F566-4EA7-9233-A2342D6DFC7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66066538-F566-4EA7-9233-A2342D6DFC7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3BBBB25B-D0E5-4CC5-883C-7449CE10CFC6} = {7DEA85E7-1A8C-4CD8-851C-93DA06876478}
+		{5045A937-CD79-4871-B4A9-DBBE12FB1B8E} = {7DEA85E7-1A8C-4CD8-851C-93DA06876478}
+		{BBB9C4C9-ABBA-4B89-9F7B-EE2BB241C67B} = {7DEA85E7-1A8C-4CD8-851C-93DA06876478}
+		{66066538-F566-4EA7-9233-A2342D6DFC7E} = {2A179564-1E28-4918-BE16-494C31BFD9F2}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E647C73B-6B19-4B4F-97EC-8D3ECE787B91}
+	EndGlobalSection
+EndGlobal
