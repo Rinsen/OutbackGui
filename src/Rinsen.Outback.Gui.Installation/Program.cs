@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 using Rinsen.DatabaseInstaller;
 
 namespace Rinsen.Outback.Gui.Installation
@@ -14,9 +15,9 @@ namespace Rinsen.Outback.Gui.Installation
 
     public class InstallerStartup : IInstallerStartup
     {
-        public void DatabaseVersionsToInstall(List<DatabaseVersion> databaseVersions)
+        public void DatabaseVersionsToInstall(List<DatabaseVersion> databaseVersions, IConfiguration configuration)
         {
-            databaseVersions.Add(new InitializeDatabase());
+            databaseVersions.Add(new InitializeDatabase(configuration));
             databaseVersions.Add(new CreateTables());
             databaseVersions.Add(new OutbackTableInstallation());
         }

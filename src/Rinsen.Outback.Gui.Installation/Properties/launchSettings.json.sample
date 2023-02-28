@@ -1,0 +1,15 @@
+{
+  "profiles": {
+    "Rinsen.Outback.Installation": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "Command": "Install",
+        "DatabaseName": "Outback",
+        "Schema": "dbo",
+        "ConnectionStrings__Outback": "Server=;User Id=sa;Password=; TrustServerCertificate=True;"
+      },
+      "remoteDebugEnabled": false,
+      "hotReloadEnabled": true
+    }
+  }
+}
