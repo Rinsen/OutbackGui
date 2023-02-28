@@ -21,6 +21,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C88C482B-DE59-4166-A365-84DDCF3A6177}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\codeql-analysis.yml = .github\workflows\codeql-analysis.yml
+		.github\workflows\docker-publish-installation.yml = .github\workflows\docker-publish-installation.yml
 		.github\workflows\docker-publish.yml = .github\workflows\docker-publish.yml
 		.github\workflows\ng-docker-publish.yml = .github\workflows\ng-docker-publish.yml
 		.github\workflows\node.js.yml = .github\workflows\node.js.yml
