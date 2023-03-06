@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rinsen.IdentityProvider.AuditLogging
+namespace Rinsen.IdentityProvider.AuditLogging;
+
+public class AuditLog
 {
-    public class AuditLog
+    private readonly AuditLogStorage _auditLogStorage;
+
+    public AuditLog(AuditLogStorage auditLogStorage)
     {
-        private readonly AuditLogStorage _auditLogStorage;
+        _auditLogStorage = auditLogStorage;
+    }
 
-        public AuditLog(AuditLogStorage auditLogStorage)
+    public async Task Log(string eventType, string details, string ipAddress)
+    {
+        var auditLogItem = new AuditLogItem
         {
-            _auditLogStorage = auditLogStorage;
-        }
+            EventType = eventType,
+            Details = details,
+            IpAddress = ipAddress,
+            Timestamp = DateTimeOffset.Now
+        };
 
-        public async Task Log(string eventType, string details, string ipAddress)
-        {
-            var auditLogItem = new AuditLogItem
-            {
-                EventType = eventType,
-                Details = details,
-                IpAddress = ipAddress,
-                Timestamp = DateTimeOffset.Now
-            };
-
-           await _auditLogStorage.LogAsync(auditLogItem);
-        }
+       await _auditLogStorage.LogAsync(auditLogItem);
     }
 }

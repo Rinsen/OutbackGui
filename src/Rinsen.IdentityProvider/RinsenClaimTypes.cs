@@ -1,7 +1,6 @@
-﻿namespace Rinsen.IdentityProvider
+﻿namespace Rinsen.IdentityProvider;
+
+public class RinsenClaimTypes
 {
-    public class RinsenClaimTypes
-    {
-        public const string Administrator = "r_administrator";
-    }
+    public const string Administrator = "r_administrator";
 }

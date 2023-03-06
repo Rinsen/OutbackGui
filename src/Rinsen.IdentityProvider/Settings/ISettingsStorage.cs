@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Rinsen.IdentityProvider.Settings
+namespace Rinsen.IdentityProvider.Settings;
+
+public interface ISettingsStorage
 {
-    public interface ISettingsStorage
-    {
-        Task CreateAsync(Setting setting);
-        Task<Setting?> GetAsync(string key, Guid identityId);
-        Task UpdateAsync(Setting setting);
-    }
+    Task CreateAsync(Setting setting);
+    Task<Setting?> GetAsync(string key, Guid identityId);
+    Task UpdateAsync(Setting setting);
 }

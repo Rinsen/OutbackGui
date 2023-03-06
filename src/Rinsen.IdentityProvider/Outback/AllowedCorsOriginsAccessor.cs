@@ -4,29 +4,28 @@ using Microsoft.EntityFrameworkCore;
 using Rinsen.IdentityProvider.Outback.Entities;
 using Rinsen.Outback.Accessors;
 
-namespace Rinsen.IdentityProvider.Outback
+namespace Rinsen.IdentityProvider.Outback;
+
+public class AllowedCorsOriginsAccessor : IAllowedCorsOriginsAccessor
 {
-    public class AllowedCorsOriginsAccessor : IAllowedCorsOriginsAccessor
+    private readonly OutbackDbContext _outbackDbContext;
+
+    public AllowedCorsOriginsAccessor(OutbackDbContext outbackDbContext)
     {
-        private readonly OutbackDbContext _outbackDbContext;
+        _outbackDbContext = outbackDbContext;
+    }
 
-        public AllowedCorsOriginsAccessor(OutbackDbContext outbackDbContext)
+    public async Task<HashSet<string>> GetOrigins()
+    {
+        var outbackAllowedCorsOrigins = await _outbackDbContext.AllowedCorsOrigins.ToListAsync();
+
+        var result = new HashSet<string>();
+
+        foreach (var outbackAllowedCorsOrigin in outbackAllowedCorsOrigins)
         {
-            _outbackDbContext = outbackDbContext;
+            result.Add(outbackAllowedCorsOrigin.Origin);
         }
 
-        public async Task<HashSet<string>> GetOrigins()
-        {
-            var outbackAllowedCorsOrigins = await _outbackDbContext.AllowedCorsOrigins.ToListAsync();
-
-            var result = new HashSet<string>();
-
-            foreach (var outbackAllowedCorsOrigin in outbackAllowedCorsOrigins)
-            {
-                result.Add(outbackAllowedCorsOrigin.Origin);
-            }
-
-            return result;
-        }
+        return result;
     }
 }

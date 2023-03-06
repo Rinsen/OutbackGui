@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Rinsen.IdentityProvider.LocalAccounts
+namespace Rinsen.IdentityProvider.LocalAccounts;
+
+public interface ILocalAccountStorage
 {
-    public interface ILocalAccountStorage
-    {
-        Task CreateAsync(LocalAccount localAccount);
-        Task<LocalAccount> GetAsync(Guid identityId);
-        Task<LocalAccount> GetAsync(string loginId);
-        Task UpdateAsync(LocalAccount localAccount);
-        Task DeleteAsync(LocalAccount localAccount);
-        Task UpdateFailedLoginCountAsync(LocalAccount localAccount);
-    }
+    Task CreateAsync(LocalAccount localAccount);
+    Task<LocalAccount> GetAsync(Guid identityId);
+    Task<LocalAccount> GetAsync(string loginId);
+    Task UpdateAsync(LocalAccount localAccount);
+    Task DeleteAsync(LocalAccount localAccount);
+    Task UpdateFailedLoginCountAsync(LocalAccount localAccount);
 }

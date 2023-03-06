@@ -1,19 +1,18 @@
-﻿namespace Rinsen.Outback.Gui.ApiModels
+﻿namespace Rinsen.Outback.Gui.ApiModels;
+
+public class CreateScope
 {
-    public class CreateScope
-    {
-        public string Name { get; set; } = string.Empty;
+    public string Name { get; set; } = string.Empty;
 
-        public string Description { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
 
-        public string ScopeName { get; set; } = string.Empty;
+    public string ScopeName { get; set; } = string.Empty;
 
-        public bool ShowInDiscoveryDocument { get; set; }
+    public bool ShowInDiscoveryDocument { get; set; }
 
-        public bool ClaimsInIdToken { get; set; }
+    public bool ClaimsInIdToken { get; set; }
 
-        public bool Enabled { get; set; }
+    public bool Enabled { get; set; }
 
-        public string Audience { get; set; } = string.Empty;
-    }
+    public string Audience { get; set; } = string.Empty;
 }

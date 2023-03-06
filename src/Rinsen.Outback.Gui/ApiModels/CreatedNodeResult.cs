@@ -1,9 +1,8 @@
-﻿namespace Rinsen.Outback.Gui.ApiModels
-{
-    public class CreatedNodeResult
-    {
-        public string NodeId { get; set; } = string.Empty;
+﻿namespace Rinsen.Outback.Gui.ApiModels;
 
-        public string GeneratedSecret { get; set; } = string.Empty;
-    }
+public class CreatedNodeResult
+{
+    public string NodeId { get; set; } = string.Empty;
+
+    public string GeneratedSecret { get; set; } = string.Empty;
 }

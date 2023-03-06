@@ -1,19 +1,18 @@
 ﻿using System;
 
-namespace Rinsen.IdentityProvider.Settings
+namespace Rinsen.IdentityProvider.Settings;
+
+public class Setting
 {
-    public class Setting
-    {
-        public int Id { get; set; }
+    public int Id { get; set; }
 
-        public Guid IdentityId { get; set; }
+    public Guid IdentityId { get; set; }
 
-        public string KeyField { get; set; } = string.Empty;
+    public string KeyField { get; set; } = string.Empty;
 
-        public string ValueField { get; set; } = string.Empty;
+    public string ValueField { get; set; } = string.Empty;
 
-        public DateTimeOffset Accessed { get; set; }
+    public DateTimeOffset Accessed { get; set; }
 
 
-    }
 }

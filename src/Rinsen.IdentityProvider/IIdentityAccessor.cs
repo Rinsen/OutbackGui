@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Security.Claims;
 
-namespace Rinsen.IdentityProvider
+namespace Rinsen.IdentityProvider;
+
+public interface IIdentityAccessor
 {
-    public interface IIdentityAccessor
-    {
-        ClaimsPrincipal ClaimsPrincipal { get; }
-        Guid IdentityId { get; }
-    }
+    ClaimsPrincipal ClaimsPrincipal { get; }
+    Guid IdentityId { get; }
 }

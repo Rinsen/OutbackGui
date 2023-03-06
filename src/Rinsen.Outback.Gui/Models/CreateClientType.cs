@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Rinsen.Outback.Gui.Models
+namespace Rinsen.Outback.Gui.Models;
+
+public class CreateClientType
 {
-    public class CreateClientType
-    {
 
-        [Required]
-        public string DisplayName { get; set; } = string.Empty;
+    [Required]
+    public string DisplayName { get; set; } = string.Empty;
 
-    }
 }

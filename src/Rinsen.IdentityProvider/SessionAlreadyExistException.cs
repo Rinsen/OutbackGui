@@ -1,20 +1,19 @@
 ﻿using System;
 
-namespace Rinsen.IdentityProvider
+namespace Rinsen.IdentityProvider;
+
+public class SessionAlreadyExistException : Exception
 {
-    public class SessionAlreadyExistException : Exception
+    public SessionAlreadyExistException(string message, Exception innerException)
+        :base(message, innerException)
     {
-        public SessionAlreadyExistException(string message, Exception innerException)
-            :base(message, innerException)
-        {
-
-        }
-
-        public SessionAlreadyExistException(string message)
-            : base(message)
-        {
-
-        }
 
     }
+
+    public SessionAlreadyExistException(string message)
+        : base(message)
+    {
+
+    }
+
 }

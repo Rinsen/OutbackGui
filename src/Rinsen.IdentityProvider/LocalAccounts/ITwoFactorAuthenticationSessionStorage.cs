@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rinsen.IdentityProvider.LocalAccounts
+namespace Rinsen.IdentityProvider.LocalAccounts;
+
+public interface ITwoFactorAuthenticationSessionStorage
 {
-    public interface ITwoFactorAuthenticationSessionStorage
-    {
-        Task Create(TwoFactorAuthenticationSession twoFactorAuthenticationSession);
-        Task<TwoFactorAuthenticationSession> Get(string sessionId);
-        Task Update(TwoFactorAuthenticationSession twoFactorAuthenticationSession);
-        Task Delete(TwoFactorAuthenticationSession twoFactorAuthenticationSession);
-    }
+    Task Create(TwoFactorAuthenticationSession twoFactorAuthenticationSession);
+    Task<TwoFactorAuthenticationSession> Get(string sessionId);
+    Task Update(TwoFactorAuthenticationSession twoFactorAuthenticationSession);
+    Task Delete(TwoFactorAuthenticationSession twoFactorAuthenticationSession);
 }

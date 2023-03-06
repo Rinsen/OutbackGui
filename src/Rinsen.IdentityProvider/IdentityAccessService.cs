@@ -2,40 +2,37 @@
 using Microsoft.AspNetCore.Http;
 using System;
 
-namespace Rinsen.IdentityProvider
+namespace Rinsen.IdentityProvider;
+
+public class IdentityAccessService : IIdentityAccessor
 {
-    public class IdentityAccessService : IIdentityAccessor
+    readonly IHttpContextAccessor _httpContextAccessor;
+
+    public IdentityAccessService(IHttpContextAccessor httpContextAccessor)
     {
-        readonly IHttpContextAccessor _httpContextAccessor;
+        _httpContextAccessor = httpContextAccessor;
+    }
 
-        public IdentityAccessService(IHttpContextAccessor httpContextAccessor)
+    public ClaimsPrincipal ClaimsPrincipal
+    {
+        get
         {
-            _httpContextAccessor = httpContextAccessor;
-        }
+            var user = _httpContextAccessor.HttpContext?.User;
 
-        public ClaimsPrincipal ClaimsPrincipal
-        {
-            get
+            if (user == null)
             {
-                var user = _httpContextAccessor.HttpContext?.User;
-
-                if (user == null)
-                {
-                    throw new Exception("User is null");
-                }
-
-                return user;
+                throw new Exception("User is null");
             }
-        }
 
-        public Guid IdentityId
-        {
-            get
-            {
-                return ClaimsPrincipal.GetClaimGuidValue(ClaimTypes.NameIdentifier);
-            }
+            return user;
         }
     }
 
-
+    public Guid IdentityId
+    {
+        get
+        {
+            return ClaimsPrincipal.GetClaimGuidValue(ClaimTypes.NameIdentifier);
+        }
+    }
 }
