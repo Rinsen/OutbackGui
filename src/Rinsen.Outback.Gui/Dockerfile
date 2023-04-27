@@ -12,10 +12,10 @@ COPY ["src/Rinsen.IdentityProvider/Rinsen.IdentityProvider.csproj", "src/Rinsen.
 RUN dotnet restore "src/Rinsen.Outback.Gui/Rinsen.Outback.Gui.csproj"
 COPY . .
 WORKDIR "/src/src/Rinsen.Outback.Gui"
-RUN dotnet build "Rinsen.Outback.Gui.csproj" -c Release -o /app/build
+RUN dotnet build "Rinsen.Outback.Gui.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "Rinsen.Outback.Gui.csproj" -c Release -o /app/publish
+RUN dotnet publish "Rinsen.Outback.Gui.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
