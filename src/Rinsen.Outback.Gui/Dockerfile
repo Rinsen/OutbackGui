@@ -19,5 +19,5 @@ RUN dotnet publish "Rinsen.Outback.Gui.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "Rinsen.Outback.Gui.dll"]
